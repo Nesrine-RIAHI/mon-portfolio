@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
+
 // Composant principal du portfolio
 const App = () => {
   // Références pour les sections pour les animations au scroll
@@ -377,17 +378,19 @@ const App = () => {
   <h4>CampusConnect</h4>
   <p>Plateforme étudiante (Fullstack).</p>
   {/* Vidéo locale : Place ton fichier dans public/videos/ */}
-  <video
-    className="video-demo"
-    controls
-    width="100%"
-    height="auto"
-    poster="/images/optional-poster-image.jpg" // Optionnel : Chemin vers l'image d'aperçu (dans public/images/)
-  >
-    Votre navigateur ne supporte pas la balise vidéo.
-    <source src="\Demonstration video PFA.mp4" type="video/mp4" />
-    <source src="\Demonstration video PFA.webm" type="video/webm" /> {/* Fallback pour d'autres formats – renomme si besoin */}
-  </video>
+<video
+  className="video-demo"
+  controls
+  preload="metadata"
+  playsInline
+  style={{ maxWidth: '100%', height: 'auto' }}
+>
+  <source 
+    src={`${process.env.PUBLIC_URL}/videos/demonstration-video-pfa.mp4`} 
+    type="video/mp4" 
+  />
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
   <a
     href="https://github.com/Nesrine-RIAHI/Portail-des-tudiants"
     className="github-link"
@@ -404,7 +407,35 @@ const App = () => {
             <p>Application CRUD</p>
             <a href="https://github.com/Nesrine-RIAHI/-Books-Manager-Application-CRUD-avec-Node.js-SQLite" className="github-link">Voir sur GitHub</a>
           </div>
+ {/* Projet 4: Resume Screener */}
+<div className="project-card">
+  <h4>Resume Screener</h4>
+  <p>Projet ML de screening de CV : extraction NLP de compétences et expériences via spaCy/Regex, classification en 43 métiers avec Random Forest sur dataset Kaggle, matching d'emplois par TF-IDF et similarité cosinus, suivi d'un scoring/ranking par régression pour optimiser les recrutements RH.</p>
+  {/* Vidéo locale : Place ton fichier dans public/videos/ */}
+<video
+  className="video-demo"
+  controls
+  preload="metadata"
+  playsInline
+  style={{ maxWidth: '100%', height: 'auto' }}
+>
+  <source 
+    src={`${process.env.PUBLIC_URL}/videos/Demonstration Resume Screener.mp4`} 
+    type="video/mp4" 
+  />
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+  <a
+    href="https://github.com/Nesrine-RIAHI/Resume-Screener-"
+    className="github-link"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Voir sur GitHub
+  </a>
+</div>
         </div>
+       
       </section>
 
       {/* À Propos + Timeline (Exemple basique) */}
@@ -418,8 +449,9 @@ const App = () => {
             <h4>2023 -2026 étudiante en génie logiciel et systéme d'information à faculté des sciences de Monastir</h4>
             <p>En tant qu'étudiante en Licence de Génie Logiciel et Systèmes d'Information, je me suis immergée dans l'univers du développement fullstack, maîtrisant Java pour des architectures robustes et JavaScript avec Node.js, Express.js et React pour des interfaces dynamiques et réactives. Passionnée par les données, j'explore les bases SQL et NoSQL pour modéliser des écosystèmes informationnels scalables, tout en m'aventurant dans l'intelligence artificielle et le machine learning pour anticiper les innovations de demain. Ce parcours me prépare à transformer des idées en solutions impactantes, alliant code élégant et intelligence augmentée.</p>
           </div>
-         
+          
         </div>
+        
       </section>
 
       {/* Contact (Vitrine : sans formulaire, juste infos) */}
